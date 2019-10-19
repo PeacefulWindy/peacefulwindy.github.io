@@ -1,0 +1,40 @@
+#articleGride
+{
+    width:150px;
+    float:left;
+    border-right:solid 1px black;
+}
+
+#articleGride h3
+{
+    margin-left: 15px;
+}
+
+#articleGride ul li
+{
+    list-style-type: none;
+}
+
+#articleGride ul li a
+{
+    color:white;
+}
+
+#ArticleList
+{
+    margin-right: 5px;
+    width:1000px;
+    float:right;
+}
+
+#discussArea
+{
+    float:right;
+    width:995px;
+    display:none;
+}
+
+#editor p
+{
+    text-indent:0px;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<p id="noJSTip">检测到没有JavaScript,请确保您的浏览器开启JavaScript或网络通畅</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Who's Blog</title>
+    <link rel="stylesheet" href="Resources/CSS/blog.css">
+    <link rel="stylesheet" href="Resources/CSS/article.css">
+    <script src="Resources/JS/jquery-3.4.1.min.js"></script>
+    <script src="Resources/JS/config.js"></script>
+    <script src="Resources/JS/wangEditor.min.js"></script>
+    <script src="Resources/JS/common.js"></script>
+    <script src="Resources/JS/blogCommon.js"></script>
+    <script src="Resources/JS/article.js"></script>
+</head>
+<body>
+    <div id="top">
+        <ul id="gride">
+            <li><a href="blog.html"><span>首页</span></a></li>
+            <li><a href="about.html"><span>关于</span></a></li>
+        </ul>
+        <ul id="accountGride">
+            <li><a href="accountLogin.html"><span>登录</span></a></li>
+            <li><a href="accountRegister.html"><span>注册</span></a></li>
+        </ul>
+    </div>
+    <div id="topBackground"></div>
+    <div id="body">
+        <div id="articleGride">
+            <h3>分类列表</h3>
+            <ul>
+                <li><span><a href="article.html?classify=1"></a>未分类</span></li>
+            </ul>
+        </div>
+        <!--
+        <div id="search">
+            <ul>
+                <li><span>站内搜索</span></li>
+                <li><input type="text" placeholder="百度"><button>搜索</button></li>
+                <li><input type="text" placeholder="Google"><button>搜索</button></li>
+            </ul>
+        </div>
+        -->
+        <div id="newArticle">
+            <div id="ArticleList">
+                <h2>文章列表</h2>
+                <div style="border-bottom: solid 1px black"></div>
+            </div>
+            <div style="clear: both"></div>
+            <div id="discussArea">
+                <div style='border-bottom: solid 1px black;margin-top:20px;'></div>
+                <div>评论区</div>
+                <div style='border-bottom: solid 1px black;margin-top:20px';></div>
+                <div id="discussShow">
+                    <p>评论正在加载中...</p>
+                </div>
+                <div style='border-bottom: solid 1px black;'></div>
+                <div id="discuss">
+                    <p>评论:</p>
+                    <div id="editor"></div>
+                    <button>提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

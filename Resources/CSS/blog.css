@@ -1,0 +1,157 @@
+html,body
+{
+    margin: 0px;
+    padding:0px;
+    background-color: rgb(40,43,60);
+    color:white;
+}
+
+#gride
+{
+    float:left;
+    margin-left:200px;
+}
+
+#gride li
+{
+    list-style-type: none;
+    float: left;
+    margin-left:30px;
+    font-size: 25px;
+}
+
+#gride li a
+{
+    color:white;
+    text-decoration: none;
+}
+
+#accountGride
+{
+    float: right;
+    margin-right:200px;
+}
+
+#accountGride li
+{
+    list-style-type: none;
+    float:left;
+    margin-right:30px;
+    font-size: 25px;
+}
+
+#accountGride li a
+{
+    color:white;
+    text-decoration: none;
+}
+
+#topBackground
+{
+    clear: both;
+    height:200px;
+    background-image: url('/Resources/Images/miez53f00dj4792.jpg');
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+
+#body
+{
+    margin:0 auto;
+    width:1280px;
+    margin-top: 30px;
+}
+
+#newArticle h2
+{
+    margin:0 auto;
+    margin-left:5px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#ArticleList
+{
+    width:1150px;
+    margin: 15px auto;
+    padding-left:30px;
+}
+
+#ArticleList div
+{
+    margin-left:5px;
+}
+
+#ArticleList div h3
+{
+    margin:5px;
+    margin-bottom: 10px;
+}
+
+#Article div p
+{
+    margin-left:30px;
+}
+
+#newArticle a
+{
+    color:white;
+}
+
+table
+{
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+}
+table td,
+table th 
+{
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 3px 5px;
+}
+table th 
+{
+    border-bottom: 2px solid #ccc;
+    text-align: center;
+}
+  
+  /* blockquote 样式 */
+blockquote
+{
+    display: block;
+    border-left: 8px solid #d0e5f2;
+    padding: 5px 10px;
+    margin: 10px 0;
+    line-height: 1.4;
+    font-size: 100%;
+    background-color: #f1f1f1;
+}
+  
+/* code 样式 */
+code 
+{
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    padding: 3px 5px;
+    margin: 0 3px;
+    color:black;
+    width:995px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+p{ text-indent:25px}
+
+pre code 
+{
+    display: block;
+}
+  
+  /* ul ol 样式 */
+ul, ol {
+    margin: 10px 0 10px 20px;
+}
