@@ -10,7 +10,7 @@ var editor=new E("#editor");
 editor.create();
 
 $("#submitArticle").on("click",function(){
-    var title=$("#articleTitle").val();
+    var title=$("#title").val();
     var content=editor.txt.html();
     var public=false;
 
