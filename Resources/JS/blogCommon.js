@@ -119,7 +119,6 @@ function getArticle(classifyID=-1,limit=10,private=false)
     {
         url=url+"&token="+tk;
     }
-    console.log(url)
 
     $.ajax({
         type:"GET",
