@@ -69,6 +69,10 @@ function getDiscuss(id)
         success:function(json)
         {
             var htm=readDiscussData(json.data,id,json.userName,json.admin);
+	    if(htm=="")
+	    {
+                htm="<div class='discuss'>还没有人评论呢=。=</div>";
+	    }
             $("#discussShow").html(htm);
         },error:function(json)
         {
