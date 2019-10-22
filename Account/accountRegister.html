@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<p id="noJSTip">检测到没有JavaScript,请确保您的浏览器开启JavaScript或网络通畅</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>注册</title>
+    <link rel="stylesheet" href="../Resources/CSS/Account/registerIndex.css">
+    <script src="../Resources/JS/jquery-3.4.1.min.js"></script>
+    <script src="../Resources/JS/config.js"></script>
+    <script src="../Resources/JS/common.js"></script>
+    <script src="../Resources/JS/Account/accountRegister.js"></script>
+</head>
+<body>
+    <ul id="table">
+        <li>
+            <span class="span1">*账号</span>
+            <input type="text" id="account" placeholder="请输入账号,6~16位,注册后不可修改">
+            <span id="accountTip"></span>
+        </li>
+        <li>
+            <span class="span1">*密码</span>
+            <input type="password" id="pwd" placeholder="请输入密码,6~16位">
+            <span id="pwdTip"></span>
+        </li>
+        <li>
+            <span class="span1">确认密码</span>
+            <input type="password" id="surePWD" placeholder="确认密码">
+            <span id="surePWDTip"></span>
+        </li>
+        <li>
+            <span class="span1">*用户名</span>
+            <input type="text" id="username" placeholder="请输入用户名,6~16位">
+            <span id="usernameTip"></span>
+        </li>
+        <li>
+            <span class="span1">*邮箱</span>
+            <input type="text" id="email" placeholder="请输入邮箱,不能使用qq.com,重置密码用">
+        </li>
+        <li>
+            <span class="span1">手机</span>
+            <input type="text" id="phone" placeholder="请输入手机号">
+        </li>
+        <li>
+            <button onclick="register()">注册</button>
+            <button onclick="previousPage()">返回上一页</button>
+        </li>
+    </ul>
+</body>
+</html>

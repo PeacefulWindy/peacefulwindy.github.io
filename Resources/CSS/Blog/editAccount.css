@@ -1,0 +1,10 @@
+#editArtTable li
+{
+    list-style-type: none;
+}
+
+#editArtTable li span
+{
+    margin-right: 20px;
+}
+

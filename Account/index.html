@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<p id="noJSTip">检测到没有JavaScript,请确保您的浏览器开启JavaScript或网络通畅</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>账号管理</title>
+    <link rel="stylesheet" href="../Resources/CSS/Account/account.css">
+    <script src="../Resources/JS/jquery-3.4.1.min.js"></script>
+    <script src="../Resources/JS/config.js"></script>
+    <script src="../Resources/JS/common.js"></script>
+    <script src="../Resources/JS/Account/account.js"></script>
+</head>
+<body>
+    <ul id="noLoginTable">
+        <li><a href="accountLogin.html"><span>登录</span></a></li>
+        <li><a href="accountRegister.html"><span>注册</span></a></li>
+        <li><a href="/"><span>返回首页</span></a></li>
+    </ul>
+    <div id="accTable">
+        <table>
+            <tr>
+                <th><span>账号管理</span></th>
+            </tr>
+            <tr>
+                <td><span>账号:</span></td>
+                <td><span id="account">无</span></td>
+            </tr>
+            <tr>
+                <td><span>用户名</td>
+                <td><span id="userName">无</span></td>
+                <td><button>修改用户名</button></td>
+            </tr>
+            <tr>
+                <td><span>密码:</span></td>
+                <td><span>*****</span></td>
+                <td><button>修改密码</button></td>
+            </tr>
+            <tr>
+                <td><span>邮箱</span></td>
+                <td id="email"><span>***</span></td>
+                <td><button>修改邮箱</button></td>
+            </tr>
+            <tr>
+                <td><span>手机</span></td>
+                <td id="phone"><span>无</span></td>
+                <td><button>添加手机号</button></td>
+            </tr>
+            <tr>
+                <td><span>身份证</span></td>
+                <td id="IDCard"><span>无</span></td>
+                <td><button>添加身份证</button></td>
+            </tr>
+            <tr>
+                <td>其它功能</td>
+            </tr>
+            <tr>
+                <td><a href="../Blog/editArticle.html">写文章</a></td>
+            </tr>
+            <tr>
+                <td><button onclick="logout()">注销</button></td>
+                <td><button onclick="backIndex()">返回首页</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        getAccountInfo();
+    </script>
+</body>
+</html>
