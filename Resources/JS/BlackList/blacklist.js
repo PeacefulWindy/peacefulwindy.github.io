@@ -189,7 +189,7 @@ function submitAppeal()
             if(json.code==200)
             {
                 alert("提交成功,请等待审核");
-                window.location.href="blacklist.html";
+                window.location.href="index.html";
             }
             else
             {
