@@ -98,6 +98,7 @@ function searchBlackList(page=1)
             htm=htm+"<th>日期</th>";
             htm=htm+"<th>操作</th>";
             htm=htm+"</tr>";
+            var count=0;
             $.each(json.data,function(key,val)
             {
                 actList=val.actorName.split(",");
@@ -148,6 +149,7 @@ function searchBlackList(page=1)
                 htm=htm+"<a href='submitBlackListAppeal.html?id="+val.id+"'>申诉</a>";
                 htm=htm+"</td>";
                 htm=htm+"</tr>";
+                count++;
             })
             $("#blacklist").html(htm);
             $("#paginator").jqPaginator({
@@ -161,6 +163,10 @@ function searchBlackList(page=1)
                     }
                 }
             });
+            if(count==0)
+            {
+                alert("暂无搜索结果");
+            }
         },error:function(json)
         {
             alert("连接服务器错误!");
