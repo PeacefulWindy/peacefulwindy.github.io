@@ -1,7 +1,7 @@
 function setGride()
 {
     var grideText=new Array("首页","文章","关于","主页");
-    var grideLink=new Array("blog.html","article.html","about.html","../index.html");
+    var grideLink=new Array("index.html","article.html","about.html","../index.html");
 
     var html="";
     for(var i=0;i<grideText.length;i++)
