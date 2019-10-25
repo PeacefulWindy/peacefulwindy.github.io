@@ -207,7 +207,7 @@ function checkLogin()
             if(json.code==200)
             {
                 var htm="";
-                htm=htm+"<li><a href='account.html'><span>账号面板</span></a></li>";
+                htm=htm+"<li><a href='../Account/index.html'><span>账号面板</span></a></li>";
                 $("#accountGride").html(htm);
             }
         },
