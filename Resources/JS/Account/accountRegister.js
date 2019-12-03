@@ -70,8 +70,6 @@ function register()
         {
             if(json.code==200)
             {
-                window.localStorage.setItem("token",json.data.token);
-                window.localStorage.setItem("account",json.data.account);
                 alert("注册成功");
                 previousPage();
             }
