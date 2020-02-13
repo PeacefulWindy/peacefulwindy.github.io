@@ -13,18 +13,17 @@ body
 .leftGride
 {
     width:70%;
-    background-color:red;
+    background-color:#CCFFFF;
     float:left;
-    border:0.1em solid blue;
     position:absolute;
-    display:none;
+	display:none;
+	padding:0.5em;
 }
 
 .leftGride ul
 {
     height:100%;
     margin:0 auto;
-    border:0.1em solid blue;
 }
 
 .leftGride ul li

@@ -111,21 +111,21 @@ for it in mdList:
     node=root.xpath("//div[@class='markdown-body']")
     node[0].text=html
 
-    node=root.xpath("//script")
-    for it2 in node:
-        tmp=it2.get("src")
-        for i in range(1,curPathCount):
-            tmp="../"+tmp
+    # node=root.xpath("//script")
+    # for it2 in node:
+    #     tmp=it2.get("src")
+    #     for i in range(1,curPathCount):
+    #         tmp="../"+tmp
         
-        it2.set("src",tmp)
+    #     it2.set("src",tmp)
 
-    node=root.xpath("//link")
-    for it2 in node:
-        tmp=it2.get("href")
-        for i in range(1,curPathCount):
-            tmp="../"+tmp
+    # node=root.xpath("//link")
+    # for it2 in node:
+    #     tmp=it2.get("href")
+    #     for i in range(1,curPathCount):
+    #         tmp="../"+tmp
         
-        it2.set("href",tmp)
+    #     it2.set("href",tmp)
 
     node=root.xpath("//title")
     node[0].text=stem
