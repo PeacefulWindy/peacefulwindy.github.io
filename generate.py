@@ -75,6 +75,7 @@ for it in mdList:
         continue
 
     html=readMDFile(it)
+    html=re.sub(r'<a href="" title="([\w|/|.]*)">',r'<a href="\1">',html)
     path=it
     path=path.replace("data","",1)
 
@@ -128,6 +129,14 @@ for it in mdList:
 
     node=root.xpath("//title")
     node[0].text=stem
+
+    node=root.xpath("div[@class='markdown-body']/*")
+    for it2 in node:
+        url=it2.get("title")
+        if url:
+            it2.set("href",url)
+            it2.set("title","")
+        
 
     tree.write(path+stem+".html",pretty_print=True, xml_declaration=True, encoding='utf-8')
 
