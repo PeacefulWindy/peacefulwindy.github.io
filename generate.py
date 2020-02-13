@@ -13,6 +13,9 @@ ignoreList.append("data")
 ignoreList.append("template")
 ignoreList.append("generate.py")
 
+titleList=dict()
+titleList["index"]="欢迎来到PeacefulWindy的主页"
+
 # 遍历文件夹
 def walkFile(fileList,file):
     for root, dirs, files in os.walk(file):
@@ -33,7 +36,7 @@ def readMDFile(path):
 	content=""
 	with open(path,mode="r",encoding="utf-8") as file:
 		content=file.read()
-	return markdown.markdown(content)
+	return markdown.markdown(content,output_format="html5")
 
 fileList=os.listdir()
 for it in fileList:
@@ -111,24 +114,11 @@ for it in mdList:
     node=root.xpath("//div[@class='markdown-body']")
     node[0].text=html
 
-    # node=root.xpath("//script")
-    # for it2 in node:
-    #     tmp=it2.get("src")
-    #     for i in range(1,curPathCount):
-    #         tmp="../"+tmp
-        
-    #     it2.set("src",tmp)
-
-    # node=root.xpath("//link")
-    # for it2 in node:
-    #     tmp=it2.get("href")
-    #     for i in range(1,curPathCount):
-    #         tmp="../"+tmp
-        
-    #     it2.set("href",tmp)
-
     node=root.xpath("//title")
-    node[0].text=stem
+    if not titleList.get(stem):
+        node[0].text=stem
+    else:
+        node[0].text=titleList.get(stem)
 
     node=root.xpath("div[@class='markdown-body']/*")
     for it2 in node:
@@ -136,7 +126,6 @@ for it in mdList:
         if url:
             it2.set("href",url)
             it2.set("title","")
-        
 
     tree.write(path+stem+".html",pretty_print=True, xml_declaration=True, encoding='utf-8')
 

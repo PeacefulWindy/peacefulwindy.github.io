@@ -16,5 +16,3 @@ index-url=https://mirrors.163.com/pypi/simple/
 2. Linux
 
 以后补充w
-
-![pic](TIM截图20180801205708.png)
