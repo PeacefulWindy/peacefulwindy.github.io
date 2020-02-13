@@ -1,0 +1,53 @@
+*
+{
+	margin:0;
+	padding:0;
+}
+
+body
+{
+	margin:1.5em;
+	background-color: rgb(40,43,60);
+}
+
+.leftGride
+{
+    width:70%;
+    background-color:red;
+    float:left;
+    border:0.1em solid blue;
+    position:absolute;
+    display:none;
+}
+
+.leftGride ul
+{
+    height:100%;
+    margin:0 auto;
+    border:0.1em solid blue;
+}
+
+.leftGride ul li
+{
+	text-decoration: none;
+}
+
+.menu-icon
+{
+	width: 30px;
+	height: 5px;
+	border-top: 5px solid #DD575C;
+	border-bottom: 5px solid #DD575C;
+	background-color: #DD575C;
+	padding: 5px 0;
+	background-clip:content-box;
+	float:right;
+	position:absolute;
+	right:0.5em;
+	top:0.5em;
+}
+
+.template-body
+{
+	display:none;
+}
