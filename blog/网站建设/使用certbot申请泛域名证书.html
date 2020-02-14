@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" http-equiv="Content-Type"></script>
+    <link rel="stylesheet" href="/Resources/css/global.css" type="text/css"></script>
+    <link rel="stylesheet" href="/Resources/css/github-markdown.css" type="text/css"></script>
+    <script src="/Resources/js/jquery-3.4.1.min.js"></script>
+    <script src="/Resources/js/global.js"></script>
+    <title>使用certbot申请泛域名证书</title>
+</head>
+<body>
+    <div class="leftGride"><h4>导航</h4>
+<ul>
+<li><a href="/index.html">首页</a></li>
+<li><a href="/blog/blog.html">文章</a></li>
+</ul>
+<h4>本站搜索</h4>
+<p><input id="searchText" type="text" /><br />
+<input name="searchRadio" type="radio" value="www.peacefulwindy.xyz" checked="checked" />主站点<br />
+<input name="searchRadio" type="radio" value="peacefulwindy.github.io" />Github分站<br />
+<button id="baiduSearchBtn">百度一下</button>
+<button id="googleSearchBtn">Google搜索</button></p></div>
+    <div class="menu-icon" style="font-family:Comic Sans MS;font-size:14px;">
+    </div>
+    <div class="markdown-body"><h2>使用certbot申请泛域名证书</h2>
+<p>系统环境：Ubuntu18.04</p>
+<ol>
+<li>
+<p>下载certbot-auto
+<code>wget https://dl.eff.org/certbot-auto</code></p>
+</li>
+<li>
+<p>需要将certbot-auto赋予为可执行权限
+<code>chmod +x certbot-auto wget https://dl.eff.org/certbot-auto</code></p>
+</li>
+<li>运行certbot-auto生成证书：
+<code>./certbot-auto certonly --email 邮箱 -d 域名 -d 域名2 --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory</code>
+"certonly" 表示安装模式，Certbot 有安装模式和验证模式两种类型的插件。
+--manual 表示手动交互模式，Certbot 有很多插件，不同的插件都可以申请证书，用户可以根据需要自行选择</li>
+</ol>
+<p>-d 为那些主机申请证书，如果是通配符，输入 *.xxxx.com （可以替换为你自己的域名）</p>
+<p>--preferred-challenges 使用 DNS 方式校验域名所有权</p>
+<p>--server Let's Encrypt ACME v2 版本使用的服务器不同于 v1 版本，需要显示指定。</p>
+<ol>
+<li>将会出现需要操作的提示，同意条款和绑定IP之类的
+```
+Please read the Terms of Service at
+https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf. You muse agree in order to register with the ACME server at https://acme-v02.api.letsencrypt.org/directory</li>
+</ol>
+<hr>
+<h2>(A)gree/(C)ancle:A</h2>
+<h2>Would you be willing to share your email address with the Electronic FrontierFoundation, a founding partner of the Let's Encrypt project and the non-profitorgani zation that develops Certbot? we 'd like to send you email about our workencrypting the web,  EFF news , campaigns, and waya to support digital freedom.</h2>
+<h2>(Y)es/(N)o:Y</h2>
+<h2>Are you OK with your IP being logged?</h2>
+<p>(Y)es/(N)o:Y
+```</p>
+<p>然后会出现最关键的：
+```
+Please deploy a DNS TXT record under the name
+_acme-challenge.peacefulwindy.xyz with the following value:</p>
+<p><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong>*</strong>*（复制这段）</p>
+<p>Before continuing, verify the record is deployed.
+<code>复制之后，在申请的域名列表里添加TXT记录</code>
+hostname:_acme-challenge
+type:TXT
+value:<strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em>*
+<code>注意：更新需要时间，具体取决于你设置的TTL值
+确认更新完成之后按回车键即可验证</code>
+失败提示：
+Challenge failed for domain </strong>*（这段是红色的）
+然后下面一堆东西就不管他了</p>
+<p>成功提示：</p>
+<p>```</p>
+<h3>参考资料：</h3>
+<ol>
+<li><a href="https://www.willh.cn/articles/2018/07/27/1532676216270.html">Willh's Blog</a></li>
+</ol></div>
+    <div class="top-icon">
+    </div>
+</body>
+</html>

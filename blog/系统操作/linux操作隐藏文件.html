@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Resources/css/github-markdown.css" type="text/css"></script>
     <script src="/Resources/js/jquery-3.4.1.min.js"></script>
     <script src="/Resources/js/global.js"></script>
-    <title>python更换国内源</title>
+    <title>linux操作隐藏文件</title>
 </head>
 <body>
     <div class="leftGride"><h4>导航</h4>
@@ -23,21 +23,21 @@
 <button id="googleSearchBtn">Google搜索</button></p></div>
     <div class="menu-icon" style="font-family:Comic Sans MS;font-size:14px;">
     </div>
-    <div class="markdown-body"><h1>python更换国内源</h1>
-<p>以前有在博客里存着放在数据库的，结果服务器一出问题不好拿数据了。重新记录一次比较好</p>
-<ol>
-<li>Windows</li>
-</ol>
-<p>在windows的X:/Users/XXX/pip目录下建立pip.ini，内容如下：
-<code>[global]
-index-url=https://mirrors.163.com/pypi/simple/</code></p>
-<ol>
-<li>Linux</li>
-</ol>
-<p>以后补充w</p>
+    <div class="markdown-body"><p>本来是移动git仓库里的所有文件到上一个目录，结果发现隐藏文件.git没有移动。
+查了下资料发现是*的问题。
+因为bash默认*不会匹配到隐藏文件。</p>
+<p>那么解决办法呢？
+或许你会想到以下方案：
+<code>mv .* ../</code>
+但是这会报错
+<code>mv: -r not specified; omitting directory '.'
+mv: -r not specified; omitting directory '..'</code>
+原因：.和..都是系统的隐藏目录，是没法</p>
+<p>解决办法：使用正则表达式匹配
+<code>mv .[^.]* ../</code></p>
 <h3>参考资料：</h3>
 <ol>
-<li><a href="https://blog.csdn.net/qq_14994573/article/details/80934201">CSDN Merlore</a></li>
+<li><a href="http://blog.chinaunix.net/uid-1800058-id-3146934.html">Chinaunix wwr</a></li>
 </ol></div>
     <div class="top-icon">
     </div>
