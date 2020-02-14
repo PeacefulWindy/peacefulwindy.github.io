@@ -45,7 +45,7 @@ Are you OK with your IP being logged?
 Please deploy a DNS TXT record under the name
 _acme-challenge.peacefulwindy.xyz with the following value:
 
-**********************************（复制这段）
+TXT值（复制这段）
 
 Before continuing, verify the record is deployed.
 ```
@@ -53,7 +53,7 @@ Before continuing, verify the record is deployed.
 ```
 hostname:_acme-challenge
 type:TXT
-value:**********************************
+value:TXT值
 ```
 注意：更新需要时间，具体取决于你设置的TTL值
 确认更新完成之后按回车键即可验证
@@ -63,8 +63,21 @@ Challenge failed for domain ***（这段是红色的）
 然后下面一堆东西就不管他了
 
 成功提示：
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/域名/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/域名/privkey.pem
+   Your cert will expire on 2020-05-14. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot-auto
+   again. To non-interactively renew *all* of your certificates, run
+   "certbot-auto renew"
+ - If you like Certbot, please consider supporting our work by:
 
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
 ```
+证书路径在/etc/letsencrypt/live/域名/，这样就申请成功了
 
 ### 参考资料： ###
 

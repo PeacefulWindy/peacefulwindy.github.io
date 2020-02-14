@@ -13,6 +13,10 @@ ignoreList.append("data")
 ignoreList.append("template")
 ignoreList.append("generate.py")
 
+slash="/"
+if platform.system() == "Windows":
+    slash="\\"
+
 titleList=dict()
 titleList["index"]="欢迎来到PeacefulWindy的主页"
 
@@ -64,17 +68,10 @@ for it in resList:
         pass
     shutil.copyfile(it,path)
 
-for it in mdList:
-    if it.find("gride") != -1:
-        html=readMDFile(it)
-        path=it
-        path=path.replace("data","",1)
-        if platform.system() == "Windows":
-            path=path.replace("\\","",1)
-        else:
-            path=path.replace("/","",1)
+grideList["gride.md"]=readMDFile("data"+slash+"gride.md")
 
-        grideList[path]=html
+for it in mdList:
+    if it=="data"+slash+"gride.md":
         continue
 
     html=readMDFile(it)
@@ -83,12 +80,8 @@ for it in mdList:
     path=path.replace("data","",1)
 
     curPathCount=0
-    if platform.system() == "Windows":
-        path=path.replace("\\","",1)
-        curPathCount=len(path.split("\\"))
-    else:
-        path=path.replace("/","",1)
-        curPathCount=len(path.split("/"))
+    path=path.replace(slash,"",1)
+    curPathCount=len(path.split(slash))
 
     fileName=os.path.basename(path)
     stem=fileName.split('.')[0]

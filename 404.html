@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" http-equiv="Content-Type"></script>
+    <link rel="stylesheet" href="/Resources/css/global.css" type="text/css"></script>
+    <link rel="stylesheet" href="/Resources/css/github-markdown.css" type="text/css"></script>
+    <script src="/Resources/js/jquery-3.4.1.min.js"></script>
+    <script src="/Resources/js/global.js"></script>
+    <title>404</title>
+</head>
+<body>
+    <div class="leftGride"><h4>导航</h4>
+<ul>
+<li><a href="/index.html">首页</a></li>
+<li><a href="/blog/blog.html">文章</a></li>
+</ul>
+<h4>本站搜索</h4>
+<p><input id="searchText" type="text" /><br />
+<input name="searchRadio" type="radio" value="www.peacefulwindy.xyz" checked="checked" />主站点<br />
+<input name="searchRadio" type="radio" value="peacefulwindy.github.io" />Github分站<br />
+<button id="baiduSearchBtn">百度一下</button>
+<button id="googleSearchBtn">Google搜索</button></p></div>
+    <div class="menu-icon" style="font-family:Comic Sans MS;font-size:14px;">
+    </div>
+    <div class="markdown-body"><p>不好意思，此页面不存在哦~</p>
+<p><span id="time">5</span>秒后自动跳到主页</p>
+<script>
+window.onload=function()
+{
+    $(function ()
+    {
+      setTimeout(ChangeTime, 1000);
+    });
+
+    function ChangeTime()
+    {
+      var time;
+      time = $("#time").text();
+      time = parseInt(time);
+      time--;
+      if (time <= 0)
+      {
+        window.location.href = "/index.html";
+      }
+      else
+      {
+        $("#time").text(time);
+        setTimeout(ChangeTime, 1000);
+      }
+    }
+}
+</script></div>
+    <div class="top-icon">
+    </div>
+</body>
+</html>

@@ -59,19 +59,32 @@ https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf. You muse agre
 ```
 Please deploy a DNS TXT record under the name
 _acme-challenge.peacefulwindy.xyz with the following value:</p>
-<p><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong>*</strong>*（复制这段）</p>
+<p>TXT值（复制这段）</p>
 <p>Before continuing, verify the record is deployed.
 <code>复制之后，在申请的域名列表里添加TXT记录</code>
 hostname:_acme-challenge
 type:TXT
-value:<strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em></strong><strong><em>*</em>*
+value:TXT值
 <code>注意：更新需要时间，具体取决于你设置的TTL值
 确认更新完成之后按回车键即可验证</code>
 失败提示：
-Challenge failed for domain </strong>*（这段是红色的）
+Challenge failed for domain ***（这段是红色的）
 然后下面一堆东西就不管他了</p>
-<p>成功提示：</p>
-<p>```</p>
+<p>成功提示：
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/域名/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/域名/privkey.pem
+   Your cert will expire on 2020-05-14. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot-auto
+   again. To non-interactively renew <em>all</em> of your certificates, run
+   "certbot-auto renew"
+ - If you like Certbot, please consider supporting our work by:</p>
+<p>Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
+```
+证书路径在/etc/letsencrypt/live/域名/，这样就申请成功了</p>
 <h3>参考资料：</h3>
 <ol>
 <li><a href="https://www.willh.cn/articles/2018/07/27/1532676216270.html">Willh's Blog</a></li>
