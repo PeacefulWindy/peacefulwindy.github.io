@@ -1,4 +1,9 @@
 ## 欢迎来到PeacefulWindy的主页 ##
 
-### 公告： ###
-[查看全文]("blog/公告/关于网站改版.html")
+#### 主页访问 ##
+1. [主站](https://www.peacefulwindy.xyz)
+2. [分站](https://peacefulwindy.github.com)
+
+#### 公告：[查看全文](/blog/公告/关于网站改版.html) ####
+
+提示：菜单在右上角哦
