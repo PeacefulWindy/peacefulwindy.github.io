@@ -2,6 +2,7 @@
 
 * [首页](/index.html)
 * [文章](/blog/blog.html)
+* [应用](/blog/app.html)
 
 #### 本站搜索 ####
 

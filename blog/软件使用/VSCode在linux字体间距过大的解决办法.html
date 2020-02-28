@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Resources/css/github-markdown.css" type="text/css"></script>
     <script src="/Resources/js/jquery-3.4.1.min.js"></script>
     <script src="/Resources/js/global.js"></script>
-    <title>linux操作隐藏文件</title>
+    <title>VSCode在linux字体间距过大的解决办法</title>
 </head>
 <body>
     <div class="leftGride"><h4>导航</h4>
@@ -24,21 +24,14 @@
 <button id="googleSearchBtn">Google搜索</button></p></div>
     <div class="menu-icon" style="font-family:Comic Sans MS;font-size:14px;">
     </div>
-    <div class="markdown-body"><p>本来是移动git仓库里的所有文件到上一个目录，结果发现隐藏文件.git没有移动。
-查了下资料发现是*的问题。
-因为bash默认*不会匹配到隐藏文件。</p>
-<p>那么解决办法呢？
-或许你会想到以下方案：
-<code>mv .* ../</code>
-但是这会报错
-<code>mv: -r not specified; omitting directory '.'
-mv: -r not specified; omitting directory '..'</code>
-原因：.和..都是系统的隐藏目录，是没法</p>
-<p>解决办法：使用正则表达式匹配
-<code>mv .[^.]* ../</code></p>
-<h3>参考资料：</h3>
+    <div class="markdown-body"><h2>VSCode在linux字体间距过大的解决办法</h2>
+<p>刚刚在Ubuntu上用VSCode，发现shell每个字的间距过大。
+解决办法：
+<code>首选项-设置-搜索terminal.integrated.fontFamily</code>
+然后将值设置字体就行，比如参考资料的monospace</p>
+<h4>参考资料：</h4>
 <ol>
-<li><a href="http://blog.chinaunix.net/uid-1800058-id-3146934.html">Chinaunix wwr</a></li>
+<li><a href="https://www.cnblogs.com/chenyansu/p/8641824.html">CNBlogs 陈严肃</a></li>
 </ol></div>
     <div class="top-icon">
     </div>

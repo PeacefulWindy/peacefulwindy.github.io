@@ -12,6 +12,8 @@ ignoreList.append(".git")
 ignoreList.append("data")
 ignoreList.append("template")
 ignoreList.append("generate.py")
+ignoreList.append("blacklist")
+ignoreList.append("blacklist.html")
 
 slash="/"
 if platform.system() == "Windows":
@@ -19,6 +21,7 @@ if platform.system() == "Windows":
 
 titleList=dict()
 titleList["index"]="欢迎来到PeacefulWindy的主页"
+titleList["app"]="应用"
 
 # 遍历文件夹
 def walkFile(fileList,file):

@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" http-equiv="Content-Type"></script>
+    <link rel="stylesheet" href="/Resources/css/global.css" type="text/css"></script>
+    <link rel="stylesheet" href="/Resources/css/github-markdown.css" type="text/css"></script>
+    <script src="/Resources/js/jquery-3.4.1.min.js"></script>
+    <script src="/Resources/js/global.js"></script>
+    <title>Ubuntu安装Mysql</title>
+</head>
+<body>
+    <div class="leftGride"><h4>导航</h4>
+<ul>
+<li><a href="/index.html">首页</a></li>
+<li><a href="/blog/blog.html">文章</a></li>
+<li><a href="/blog/app.html">应用</a></li>
+</ul>
+<h4>本站搜索</h4>
+<p><input id="searchText" type="text" /><br />
+<input name="searchRadio" type="radio" value="www.peacefulwindy.xyz" checked="checked" />主站点<br />
+<input name="searchRadio" type="radio" value="peacefulwindy.github.io" />Github分站<br />
+<button id="baiduSearchBtn">百度一下</button>
+<button id="googleSearchBtn">Google搜索</button></p></div>
+    <div class="menu-icon" style="font-family:Comic Sans MS;font-size:14px;">
+    </div>
+    <div class="markdown-body"><h2>Ubuntu18.04安装Mysql</h2>
+<p>网上确实是有不少如何安装Mysql的资料，但是有一些是过时或系统不对应的。所以这里记录一下。</p>
+<p>系统：Ubuntu18.04</p>
+<p>Mysql版本：5.7.25</p>
+<p>Ubuntu可以使用apt-get安装</p>
+<p><code>sudo apt-get install mysql-server</code></p>
+<p>但是安装过程不像Ubutnu16那时候，全程默认安装不会弹密码设置。</p>
+<p>然后你傻乎乎的输入：
+<code>mysql -u root -p</code>
+突然想起来密码是啥？root？123456？想多了</p>
+<p>还是老老实实看配置文件吧
+<code>vim /etc/mysql/debian.cnf</code></p>
+<p><code>\# Automatically generated for Debian scripts. DO NOT TOUCH!
+[client]
+host     = localhost
+user     = debian-sys-maint
+password = ****************
+socket   = /var/run/mysqld/mysqld.sock
+[mysql_upgrade]
+host     = localhost
+user     = debian-sys-maint
+password = ****************
+socket   = /var/run/mysqld/mysqld.sock</code>
+把这2个坑人的复制然后登录上去修改就对了
+<code>mysql -u debian-sys-maint -p</code></p>
+<p>成功登录上去之后，接下来就是要更改用户名和密码了
+<code>update user set authentication_string=password('你的密码') where user='root' and host='localhost';</code></p>
+<p>别忘了还要修改密码验证方式，这也是新的坑点。忘了改？那就别跟我说密码输对了还是登录不上去
+<code>update user set plugin="mysql_native_password";</code></p>
+<p>记得刷新验证
+<code>flush privileges;</code></p>
+<p>最后重启mysql
+<code>sudo service mysql restart</code></p>
+<p>如果你成功的话，就能正常登录mysql了。
+这可能是为了安全，Mysql才这么做的。
+但是有些麻烦啊= =</p>
+<p>PS：
+实际上不找配置文件也行，使用跳过密码验证的方式也能做到</p>
+<p>在/etc/mysql/mysql.cnf底部添加以下内容：
+<code>[mysqld]
+skip-grant-tables</code></p>
+<p>照样跳过直接登录</p>
+<h4>参考资料</h4>
+<ol>
+<li><a href="https://blog.csdn.net/verylonglongago/article/details/85479704">CSDN Jax liu</a></li>
+</ol></div>
+    <div class="top-icon">
+    </div>
+</body>
+</html>
