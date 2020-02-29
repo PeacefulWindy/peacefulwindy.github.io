@@ -12,7 +12,7 @@ ignoreList.append(".git")
 ignoreList.append("data")
 ignoreList.append("template")
 ignoreList.append("generate.py")
-ignoreList.append("Blacklist")
+ignoreList.append("BlackList")
 
 slash="/"
 if platform.system() == "Windows":
