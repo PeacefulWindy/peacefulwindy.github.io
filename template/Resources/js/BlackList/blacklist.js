@@ -154,7 +154,7 @@ function searchBlackList(page=1)
             })
             $("#blacklist").html(htm);
             $("#paginator").jqPaginator({
-                totalPages: json.totalpage,
+                totalPages: json.totalpage==0?1:json.totalpage,
                 visiblePages: 10,
                 currentPage: json.currpage,
                 onPageChange: function (num, type) {
