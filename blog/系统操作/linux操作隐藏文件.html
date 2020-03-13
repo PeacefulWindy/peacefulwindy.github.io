@@ -28,14 +28,20 @@
 查了下资料发现是*的问题。
 因为bash默认*不会匹配到隐藏文件。</p>
 <p>那么解决办法呢？
-或许你会想到以下方案：
-<code>mv .* ../</code>
-但是这会报错
-<code>mv: -r not specified; omitting directory '.'
-mv: -r not specified; omitting directory '..'</code>
-原因：.和..都是系统的隐藏目录，是没法</p>
-<p>解决办法：使用正则表达式匹配
-<code>mv .[^.]* ../</code></p>
+或许你会想到以下方案：</p>
+<pre><code>mv .* ../
+</code></pre>
+
+<p>但是这会报错</p>
+<pre><code>mv: -r not specified; omitting directory '.'
+mv: -r not specified; omitting directory '..'
+</code></pre>
+
+<p>原因：.和..都是系统的隐藏目录，是没法</p>
+<p>解决办法：使用正则表达式匹配</p>
+<pre><code>mv .[^.]* ../
+</code></pre>
+
 <h3>参考资料：</h3>
 <ol>
 <li><a href="http://blog.chinaunix.net/uid-1800058-id-3146934.html">Chinaunix wwr</a></li>
