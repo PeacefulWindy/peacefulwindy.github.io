@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Resources/css/github-markdown.css" type="text/css"></script>
     <script src="/Resources/js/jquery-3.4.1.min.js"></script>
     <script src="/Resources/js/global.js"></script>
-    <title>404</title>
+    <title>Unity使用协程处理编辑器逻辑</title>
 </head>
 <body>
     <div class="leftGride"><h4>导航</h4>
@@ -24,34 +24,27 @@
 <button id="googleSearchBtn">Google搜索</button></p></div>
     <div class="menu-icon" style="font-family:Comic Sans MS;font-size:14px;">
     </div>
-    <div class="markdown-body"><p>不好意思，此页面不存在哦~</p>
-<p><span id="time">5</span>秒后自动跳到主页</p>
-<script>
-window.onload=function()
-{
-    $(function ()
-    {
-      setTimeout(ChangeTime, 1000);
-    });
+    <div class="markdown-body"><h1>Unity使用协程处理编辑器逻辑</h1>
+<p>会想到这个的主要因素是，工作中上级时不时要求做编辑器功能，然后这Unity的API是真的废，各种坑人的。</p>
+<p>上次是写Spine相关代码的时候，各种处理必须在下一帧才能进行。而Unity提供的API是同步的，IDE本身是异步加载的。这就是一个特大矛盾之处，写得特不爽。</p>
+<p>由于最近改了一个协程相关的代码，从而学会协程的使用。于是诞生了用协程应对这废接口的办法。</p>
+<ol>
+<li>
+<p>安装Unity官方的Editor Coroutines插件</p>
+</li>
+<li>
+<p>调用代码API更改：由原来的Unity协程</p>
+</li>
+</ol>
+<pre><code class="CSharp">MonoBehaviour.StartCoroutine(IEmulator)
+</code></pre>
 
-    function ChangeTime()
-    {
-      var time;
-      time = $("#time").text();
-      time = parseInt(time);
-      time--;
-      if (time <= 0)
-      {
-        window.location.href = "/index.html";
-      }
-      else
-      {
-        $("#time").text(time);
-        setTimeout(ChangeTime, 1000);
-      }
-    }
-}
-</script></div>
+<p>变更为</p>
+<pre><code class="CSharp">EditorCoroutineUtility.StartCoroutine(IEmulator,object)
+</code></pre>
+
+<p>其它逻辑跟写协程一样就行了。</p>
+<p>实测关于文件修改相关的代码，逻辑清晰一大堆。</p></div>
     <div class="top-icon">
     </div>
 </body>

@@ -20,6 +20,8 @@ def run():
     ignoreList.append("template")
     ignoreList.append("generate.py")
     ignoreList.append("BlackList")
+    ignoreList.append("robot.txt")
+    ignoreList.append("personalGride.html")
 
     slash="/"
     if platform.system() == "Windows":
@@ -28,6 +30,7 @@ def run():
     titleList=dict()
     titleList["index"]="欢迎来到PeacefulWindy的主页"
     titleList["app"]="应用"
+    titleList["personalGride"]="个人网站导航"
 
     # 遍历文件夹
     def walkFile(fileList,file):

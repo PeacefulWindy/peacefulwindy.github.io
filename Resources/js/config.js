@@ -1,1 +1,1 @@
-host="https://api.peacefulwindy.xyz/";
+host="https://api.peacefulwindy.cyou/";

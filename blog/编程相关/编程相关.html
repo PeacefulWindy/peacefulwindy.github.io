@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Resources/css/github-markdown.css" type="text/css"></script>
     <script src="/Resources/js/jquery-3.4.1.min.js"></script>
     <script src="/Resources/js/global.js"></script>
-    <title>404</title>
+    <title>编程相关</title>
 </head>
 <body>
     <div class="leftGride"><h4>导航</h4>
@@ -24,34 +24,35 @@
 <button id="googleSearchBtn">Google搜索</button></p></div>
     <div class="menu-icon" style="font-family:Comic Sans MS;font-size:14px;">
     </div>
-    <div class="markdown-body"><p>不好意思，此页面不存在哦~</p>
-<p><span id="time">5</span>秒后自动跳到主页</p>
-<script>
-window.onload=function()
-{
-    $(function ()
-    {
-      setTimeout(ChangeTime, 1000);
-    });
-
-    function ChangeTime()
-    {
-      var time;
-      time = $("#time").text();
-      time = parseInt(time);
-      time--;
-      if (time <= 0)
-      {
-        window.location.href = "/index.html";
-      }
-      else
-      {
-        $("#time").text(time);
-        setTimeout(ChangeTime, 1000);
-      }
-    }
-}
-</script></div>
+    <div class="markdown-body"><h2>编程语言标签</h2>
+<h4>目录：</h4>
+<p>友情提示：电脑Ctrl+F查找，手机也有查找功能</p>
+<ul>
+<li>相关文章<ul>
+<li>C/C++</li>
+<li>lua</li>
+<li>Python</li>
+</ul>
+</li>
+</ul>
+<h4>相关文章</h4>
+<ul>
+<li>C/C++</li>
+<li>lua</li>
+<li>Python：<ul>
+<li><a href="/blog/编程相关/Python/python更换国内源.html">python更换国内源</a></li>
+</ul>
+</li>
+<li>Mysql：<ul>
+<li><a href="/blog/编程相关/Mysql/Ubuntu安装Mysql.html">Ubuntu18.04安装Mysql</a></li>
+</ul>
+</li>
+<li>Unity:<ul>
+<li><a href="/blog/编程相关/Unity/Unity自定义编辑器.html">Unity自定义编辑器</a></li>
+<li><a href="/blog/编程相关/Unity/Unity使用协程处理编辑器逻辑.html">Unity使用协程处理编辑器逻辑</a></li>
+</ul>
+</li>
+</ul></div>
     <div class="top-icon">
     </div>
 </body>
