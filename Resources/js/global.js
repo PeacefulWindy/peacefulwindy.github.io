@@ -40,11 +40,10 @@ $().ready(function()
 		window.open("https://www.baidu.com/s?ie=utf-8&wd="+text+"&ct=2097152&si="+url);
 	});
 
-	//https://www.google.com/search?&as_q=TIM&as_sitesearch=qq.com
 	$("#googleSearchBtn").click(function()
 	{
 		let text=$("#searchText").val();
 		let url=$("input[name='searchRadio']:checked").val();
-		window.open("https://www.google.com/search?&as_q="+text+"&as_sitesearch="+url);
+		window.open("https://www.google.com/search?q="+text+"&as_sitesearch="+url);
 	});
 });

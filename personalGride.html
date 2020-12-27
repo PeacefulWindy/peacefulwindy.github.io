@@ -25,8 +25,29 @@
     <div class="menu-icon" style="font-family:Comic Sans MS;font-size:14px;">
     </div>
     <div class="markdown-body"><h2>个人网站导航</h2>
+<h4>搜索：</h4>
+<p><input id="searchPersonalText" type="text" /><br />
+<button id="bingPersonalSearchBtn">bing一下</button>
+<button id="googlePersonalSearchBtn">Google搜索</button></p>
 <h4>目录：</h4>
-<p>友情提示：电脑Ctrl+F查找，手机也有查找功能</p></div>
+<p>友情提示：电脑Ctrl+F查找，手机也有查找功能</p>
+<script>
+    $().ready(function()
+    {
+        $("#bingPersonalSearchBtn").click(function()
+        {
+            let text=$("#searchPersonalText").val();
+            window.open("https://www.bing.com/search?q="+text);
+            console.log("https://www.bing.com/search?q="+text);
+        });
+
+        $("#googlePersonalSearchBtn").click(function()
+        {
+            let text=$("#searchPersonalText").val();
+            window.open("https://www.google.com/search?q="+text);
+        });
+    });
+</script></div>
     <div class="top-icon">
     </div>
 </body>
