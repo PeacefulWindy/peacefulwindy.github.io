@@ -25,26 +25,55 @@
     <div class="menu-icon" style="font-family:Comic Sans MS;font-size:14px;">
     </div>
     <div class="markdown-body"><h2>个人网站导航</h2>
-<h4>搜索：</h4>
-<p><input id="searchPersonalText" type="text" /><br />
+<h4>搜索世界：</h4>
+<p><input id="searchPersonalText" type="text" /><br /><br />
 <button id="bingPersonalSearchBtn">bing一下</button>
 <button id="googlePersonalSearchBtn">Google搜索</button></p>
-<h4>目录：</h4>
 <p>友情提示：电脑Ctrl+F查找，手机也有查找功能</p>
+<h4>导航目录：</h4>
+<style>
+#searchPersonalText
+{
+    width:100%;
+    height:2em;
+}
+#bingPersonalSearchBtn
+{
+    width:30%;
+    height:2em;
+}
+#googlePersonalSearchBtn
+{
+    width:30%;
+    height:2em;
+}
+</style>
+
 <script>
     $().ready(function()
     {
-        $("#bingPersonalSearchBtn").click(function()
+        function bingClicked()
         {
             let text=$("#searchPersonalText").val();
             window.open("https://www.bing.com/search?q="+text);
             console.log("https://www.bing.com/search?q="+text);
-        });
+        }
+
+        $("#bingPersonalSearchBtn").click(bingClicked);
 
         $("#googlePersonalSearchBtn").click(function()
         {
             let text=$("#searchPersonalText").val();
             window.open("https://www.google.com/search?q="+text);
+        });
+
+        $(document).keydown(function(event){
+            switch(event.keyCode)
+            {
+            case 13:
+                bingClicked();
+                break;
+            }
         });
     });
 </script></div>
