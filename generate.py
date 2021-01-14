@@ -29,6 +29,7 @@ def run():
 
     titleList=dict()
     titleList["index"]="欢迎来到PeacefulWindy的主页"
+    titleList["blog"]="博客"
     titleList["app"]="应用"
     titleList["personalGride"]="个人网站导航"
 
